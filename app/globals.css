@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+.dock-liquid {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  width: 460px;
+  height: 70px;
+
+  background: rgba(255, 255, 255, 0.068);
+  background-blend-mode: plus-lighter;
+  mix-blend-mode: normal;
+  box-shadow: -11.1504px -10.392px 48px -12px rgba(0, 0, 0, 0.15), -1.8584px -1.732px 12px -8px rgba(0, 0, 0, 0.15), inset 2.14645px 2.00046px 9.24px rgba(255, 255, 255, 0.126), inset 1.21725px 1.13446px 4.62px rgba(255, 255, 255, 0.126);
+  backdrop-filter: blur(7.58px);
+  /* Note: backdrop-filter has minimal browser support */
+}

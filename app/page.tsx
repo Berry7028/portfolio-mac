@@ -1,5 +1,6 @@
-import Header from "@/app/components/Header";
 import { Inspiration } from "next/font/google";
+import Header from "@/app/components/Header";
+import Dock from "./components/Dock";
 
 const inspiration = Inspiration({
   weight: "400",
@@ -16,6 +17,8 @@ export default function Home() {
           <h1 className="text-9xl">Please launch Safari</h1>
         </div>
       </div>
+      {/* ここにドック */}
+      <Dock/>
     </div>
   );
 }
