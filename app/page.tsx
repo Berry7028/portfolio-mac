@@ -16,6 +16,7 @@ export default function Home() {
           <h1 className="text-9xl">Please launch Safari</h1>
         </div>
       </div>
+      <div className="dock-liquid"></div>
     </div>
   );
 }
