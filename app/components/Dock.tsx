@@ -12,7 +12,11 @@ const DOCK_ITEMS = [
   { name: "Trash", src: "/images/apps/trash.svg" },
 ];
 
-export default function Dock() {
+type Props = {
+  onLaunchSafari: () => void;
+};
+
+export default function Dock({ onLaunchSafari }: Props) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -28,7 +32,11 @@ export default function Dock() {
           onMouseLeave={() => setHoveredIndex(null)}
           {...(item.type === "separator"
             ? { isSeparator: true }
-            : { name: item.name, src: item.src })}
+            : {
+                name: item.name,
+                src: item.src,
+                onClick: item.name === "Safari" ? onLaunchSafari : undefined,
+              })}
         />
       ))}
     </div>

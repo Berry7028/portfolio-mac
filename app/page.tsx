@@ -1,6 +1,6 @@
 import { Inspiration } from "next/font/google";
 import Header from "@/app/components/Header";
-import Dock from "./components/Dock";
+import Desktop from "@/app/components/Desktop";
 
 const inspiration = Inspiration({
   weight: "400",
@@ -12,13 +12,9 @@ export default function Home() {
   return (
     <div className="text-black">
       <Header />
-      <div className="flex items-center justify-center h-screen">
-        <div className={inspiration.className}>
-          <h1 className="text-9xl">Please launch Safari</h1>
-        </div>
+      <div className="flex items-center justify-center">
       </div>
-      {/* ここにドック */}
-      <Dock/>
+      <Desktop/>
     </div>
   );
 }

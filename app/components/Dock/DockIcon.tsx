@@ -6,6 +6,7 @@ type Props = {
   hoveredIndex: number | null;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
+  onClick?: () => void;
 } & (
   | { isSeparator: true }
   | { isSeparator?: false; name: string; src: string }
@@ -13,7 +14,7 @@ type Props = {
 const MAX_LIFT_DISTANCE = 3;
 const LIFT_AMOUNT = 24;
 export default function DockIcon(props: Props) {
-  const { index, hoveredIndex, onMouseEnter, onMouseLeave } = props;
+  const { index, hoveredIndex, onMouseEnter, onMouseLeave, onClick } = props;
   if (props.isSeparator) {
     return (
       <div
@@ -38,6 +39,7 @@ export default function DockIcon(props: Props) {
       style={{ transform: `translateY(-${lift}px)` }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={onClick}
     >
       {hoveredIndex === index && (
         <span className="absolute bottom-full mb-2 px-2 py-1 rounded-xl bg-black/70 text-white text-sm whitespace-nowrap">
